@@ -1,0 +1,22 @@
+schema: '2.0'
+stages:
+  stage_1:
+    cmd: python3 stage1.py
+    deps:
+    - path: stage1.py
+      md5: 53097026530e86f417421fd9d4bd522b
+      size: 76
+    outs:
+    - path: artifacts01.txt
+      md5: 7e6214bb528dd69609564aa1392a7e53
+      size: 8
+      isexec: true
+  stage_2:
+    cmd: python3 stage2.py
+    deps:
+    - path: artifacts01.txt
+      md5: 7e6214bb528dd69609564aa1392a7e53
+      size: 8
+    - path: stage2.py
+      md5: db8935454454a943c02eb5e3df499af1
+      size: 89
